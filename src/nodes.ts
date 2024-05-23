@@ -171,7 +171,7 @@ export class BinaryExpression {
 export class BlockStatement {
     readonly type: string;
     readonly body: Statement[];
-    constructor(body) {
+    constructor(body: Statement[]) {
         this.type = Syntax.BlockStatement;
         this.body = body;
     }
@@ -464,7 +464,7 @@ export class FunctionExpression {
 export class Identifier {
     readonly type: string;
     readonly name: string;
-    constructor(name) {
+    constructor(name: string) {
         this.type = Syntax.Identifier;
         this.name = name;
     }
@@ -494,7 +494,7 @@ export class ImportDeclaration {
     readonly type: string;
     readonly specifiers: ImportDeclarationSpecifier[];
     readonly source: Literal;
-    constructor(specifiers, source) {
+    constructor(specifiers: ImportDeclarationSpecifier[], source: Literal) {
         this.type = Syntax.ImportDeclaration;
         this.specifiers = specifiers;
         this.source = source;
@@ -815,7 +815,7 @@ export class UnaryExpression {
     readonly operator: string;
     readonly argument: Expression;
     readonly prefix: boolean;
-    constructor(operator, argument) {
+    constructor(operator: string, argument: Expression) {
         this.type = Syntax.UnaryExpression;
         this.operator = operator;
         this.argument = argument;
@@ -828,7 +828,7 @@ export class UpdateExpression {
     readonly operator: string;
     readonly argument: Expression;
     readonly prefix: boolean;
-    constructor(operator, argument, prefix) {
+    constructor(operator: string, argument: Expression, prefix: boolean) {
         this.type = Syntax.UpdateExpression;
         this.operator = operator;
         this.argument = argument;
